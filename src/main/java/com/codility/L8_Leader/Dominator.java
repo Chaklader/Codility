@@ -118,6 +118,7 @@ public class Dominator {
             }
         }
 
+
         /*
         int count = (int) IntStream.of(A).map(key -> key = domCandidate).count();
         int index = Arrays.asList(A).indexOf(domCandidate);
@@ -127,6 +128,8 @@ public class Dominator {
         */
         return count > A.length / 2 ? index : -1;
     }
+
+
 
 
     /*
@@ -150,7 +153,7 @@ public class Dominator {
          * */
         for (int i = 0; i < A.length; i++) {
 
-            if (size == 0) {
+            if (size == 0) {                
                 size++;
                 value = A[i];
             } 
@@ -203,21 +206,14 @@ public class Dominator {
 
         for (int i = 0; i < A.length; i++) {
 
-            if (!map.containsKey(A[i])) {
-                map.put(A[i], 1);
-            } 
-
-            // 
-            else {
-                map.put(A[i], map.get(A[i]) + 1);
-            }
+            int count = map.containsKey(A[i])? map.get(A[i]) + 1 : 1;
+            map.put(A[i], count);
         }
 
         int max = Integer.MIN_VALUE;
         int maxElement = -1;
 
 
-        // int max = Collections.max(map.values());
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
 
             if (entry.getValue() > max) {
@@ -226,6 +222,8 @@ public class Dominator {
                 maxElement = entry.getKey();
             }
         }
+
+        // int max = Collections.max(map.values());
 
         if (A.length / 2 >= max) {
             return -1;

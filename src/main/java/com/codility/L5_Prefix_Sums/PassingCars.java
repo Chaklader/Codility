@@ -1,5 +1,6 @@
 package com.codility.L5_Prefix_Sums;
 
+
 /*
 * A non-empty array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on A road.
 

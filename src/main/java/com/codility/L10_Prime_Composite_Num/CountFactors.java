@@ -44,6 +44,7 @@ public class CountFactors {
         // int i = 46340;
         //  for (int i = 1; (i * i) > 0 && (i * i) <= N; i++) {
         
+        // we need long to prevent integer overflow 
         for (int i = 1; (long) i * i <= N; i++) {
 
             /*

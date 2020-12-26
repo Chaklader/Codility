@@ -75,6 +75,7 @@ public class EquiLeader {
 
         Stack<Integer> stack = new Stack<Integer>();
 
+
         for (int i = 0; i < A.length; i++) {
 
             if (stack.isEmpty()) {
@@ -165,19 +166,24 @@ public class EquiLeader {
 
                 size++;
                 value = A[i];
+
+                continue;
             } 
 
-            else {
+            // else {
 
-                if (A[i] == value) {
-                    size++;
-                } 
+            //     if (A[i] == value) {
+            //         size++;
+            //     } 
 
-                else {
-                    size--;
-                }
-            }
+            //     else {
+            //         size--;
+            //     }
+            // }
+
+            size = (A[i] == value)? ++size : --size;
         }
+
 
         int candidate = -1;
         int count = 0;
@@ -208,7 +214,7 @@ public class EquiLeader {
                 leaderCount++;
             }
 
-            if (leaderCount > (i + 1) / 2 && (count - leaderCount) > (A.length - i - 1) / 2) {
+            if (leaderCount > (i + 1) / 2 && (count - leaderCount) > (A.length - (i + 1)) / 2) {
                 equiCount++;
             }
         }
@@ -264,7 +270,9 @@ public class EquiLeader {
         int left = 0;
         int result = 0;
 
+
         for (int i = 0; i < A.length; i++) {
+
             if (A[i] == leader) {
                 left++;
             }
@@ -276,4 +284,6 @@ public class EquiLeader {
 
         return result;
     }
+
+
 }

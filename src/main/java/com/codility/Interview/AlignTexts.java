@@ -1,3 +1,5 @@
+/*
+
 You are moderating a newspaper page, and it's your job to align the text on the page properly. The text is provided to you in the following format:
 
     lines is an array where each element represents a paragraph, in the form of an array of words;
@@ -76,5 +78,14 @@ String helloWorld(String name) {
     System.out.println("This prints to the console when you Run Tests");
     return "Hello, " + name;
 }
+*/
 
 
+public class AlignTexts {
+
+
+    public static void main(String[] args) {
+        
+    }
+    
+}

@@ -45,26 +45,23 @@ public class MaxSliceSum {
 
         int N = A.length;
 
-        int max = 0;
-        int result = 0;
-
-        int value = Integer.MIN_VALUE;
-
         if( N == 1){
             return  A[0];
         }
 
-        for (int i = 0; i < N; i++) {
+        int v = Collections.max(A);
 
-            value = A[i] > value? A[i]: value;
+        if(v <=0){
+            return v;
+        }
+
+        int max = 0;
+        int result = 0;
+
+        for (int i = 0; i < N; i++) {
 
             max = (max + A[i]) > 0 ? (max + A[i]) : 0;
             result = result > max ? result : max;
-        }
-
-        // all of the values are negatives 
-        if(value <=0){
-            return value;
         }
 
         return result;

@@ -159,18 +159,21 @@ public class NumberOfDiscIntersections {
          * */
         int result = N * (N - 1) / 2;
 
+
         for (int j = 0; j < N; j++) {
 
             int left;
 
             // the left point is (j - A[j]) and not the (A[j] - j)
-            if (j - A[j] <= 0) {
-                left = 0;
-            } 
+            // if (j - A[j] <= 0) {
+            //     left = 0;
+            // } 
 
-            else {
-                left = j - A[j];
-            }
+            // else {
+            //     left = j - A[j];
+            // }
+
+            left = (j - A[j] <= 0)? 0 : (j - A[j]);
 
             /*
              * sum[i] is the count of the discs have rigthmost points in the range

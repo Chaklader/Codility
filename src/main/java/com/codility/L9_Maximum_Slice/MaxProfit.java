@@ -131,6 +131,7 @@ public class MaxProfit {
         buys[0] = -A[0];
         buys[1] = Math.max(-A[0], -A[1]);
 
+
         for (int i = 2; i < A.length; i++) {
 
             sells[i] = Math.max(sells[i - 1], buys[i - 1] + A[i]);
@@ -159,7 +160,9 @@ public class MaxProfit {
         int maxEnding = 0;
         int maxSlice = 0;
 
+
         for (int i = 0; i < C.length; i++) {
+
             maxEnding = Math.max(maxEnding + C[i], 0);
             maxSlice = Math.max(maxEnding, maxSlice);
         }

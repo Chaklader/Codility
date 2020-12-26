@@ -11,6 +11,7 @@ class Solution { public int solution(int X, int Y, int D); }
 
 that, given three integers X, Y and D, returns the minimal number of jumps from position X to FrogJmp position equal to or greater than Y.
 
+
 For example, given:
 
     X = 10
@@ -49,6 +50,7 @@ public class FrogJmp {
         return (int) Math.ceil((float) (Y - X) / D);
     }
 
+
     /*
      * solution - b
      * */
@@ -71,20 +73,15 @@ public class FrogJmp {
     public int solution2(int X, int Y, int D) {
 
 
-        int result = 0;
         int diff = (Y - X);
 
+        int result = diff / D;
+
         if (diff % D == 0) {
-                                    
-            result = diff / D;
             return result;
         } 
 
-        // 
-        else {
-            result = diff / D + 1;
-            return result;
-        }
+        return result +1;
     }
 
 
@@ -122,4 +119,8 @@ public class FrogJmp {
 
         System.out.println("Miami");
     }
+
 }
+
+
+

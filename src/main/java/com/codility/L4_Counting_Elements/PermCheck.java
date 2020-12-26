@@ -1,7 +1,8 @@
 package com.codility.L4_Counting_Elements;
 
 /*
-* A non-empty array A consisting of N integers is given.
+* 
+A non-empty array A consisting of N integers is given.
 
 A permutation is A sequence containing each element from 1 to N once, and only once.
 
@@ -74,6 +75,8 @@ public class PermCheck {
     public static int solution(int[] A) {
 
 
+        int N = A.length;
+
         for (int i = 0; i < A.length; i++) {
 
             if (A[i] > A.length) {
@@ -86,7 +89,7 @@ public class PermCheck {
 
             int j = A[i] - 1;
 
-            while (A[j] > 0 && j < A.length) {
+            while (A[j] > 0 && j < N) {
 
                 int k = A[j] - 1;
                 A[j] = 0;

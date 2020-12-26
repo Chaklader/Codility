@@ -109,7 +109,7 @@ public class CountNonDivisible {
 
                 D[A[i]][1] = 0;
 
-                for (int j = 1; j * j <= A[i]; j++) {
+                for (int j = 1; (long) j * j <= A[i]; j++) {
 
                     if (A[i] % j == 0) {
 

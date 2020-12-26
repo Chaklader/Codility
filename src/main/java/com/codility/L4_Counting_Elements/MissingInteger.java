@@ -47,7 +47,7 @@ public class MissingInteger {
             return 1;
         }
 
-        ArrayList<Integer> list = IntStream.of(A).boxed()
+        List<Integer> list = IntStream.of(A).boxed()
                 .filter(x -> x > 0).sorted().distinct()
                 .collect(Collectors.toCollection(ArrayList<Integer>::new));
 
@@ -79,7 +79,7 @@ public class MissingInteger {
 
         for (int a : A) {
 
-            if (a > 0 && a < M) {
+            if (a > 0 && a <= N) {
 
                 int j = a - 1;
                 counter[j] = true;
@@ -212,6 +212,7 @@ public class MissingInteger {
     }
 
 
+
     /*
      * solution - f
      * */
@@ -335,7 +336,9 @@ public class MissingInteger {
             if (j >= 0 && j < N && A[j] > 0) {
                 C[j] = -A[j];
             }
+
         }
+
 
         for (int i = 0; i < N; i++) {
 

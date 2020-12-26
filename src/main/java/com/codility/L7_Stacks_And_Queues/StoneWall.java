@@ -69,7 +69,7 @@ public class StoneWall {
                 continue;
             }
 
-            else if (stack.peek() < H[i]) {                
+            if (stack.peek() < H[i]) {                
                 stack.push(H[i]);
                 count++;
             }
@@ -103,10 +103,10 @@ public class StoneWall {
 
         Stack<Integer> stack = new Stack<Integer>();
 
+
         for (int i = 0; i < H.length; i++) {
 
             if (stack.isEmpty()) {
-
                 stack.push(H[i]);
                 count++;
             }
@@ -156,6 +156,7 @@ public class StoneWall {
              * reduce the lenOfElements by 1
              * */
             while (lenOfElements > 0 && C[lenOfElements - 1] > a) {
+
                 lenOfElements--;
             }
 
@@ -167,6 +168,7 @@ public class StoneWall {
 
                 numOfBlocks++;
                 C[lenOfElements] = a;
+
                 lenOfElements++;
             }
 
@@ -189,12 +191,15 @@ public class StoneWall {
 
         for (int a : A) {
 
+
             while (counter > 0 && C[counter - 1] > a) {
                 counter--;
             }
 
             if (counter == 0 || C[counter - 1] < a) {
+
                 C[counter] = a;
+
                 result++;
                 counter++;
             }

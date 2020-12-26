@@ -70,12 +70,6 @@ public class Ladder {
 
     public static int[] solution(int[] A, int[] B) {
 
-        int N = A.length;
-
-        int[] F = new int[N + 1];
-
-        F[0] = 1;
-        F[1] = 1;
 
         //      * 2^32-1 is the maximum value for a 32-bit unsigned integer
         //      * (32 binary digits). 2^32 is the number of possible values
@@ -97,15 +91,29 @@ public class Ladder {
         //     fib[fIndex] = (fib[fIndex - 1] + fib[fIndex - 2]) % (1 << 30);
         // }
 
-        for (int i = 2; i < F.length; i++) {
 
-            // 2^30
+
+        int N = A.length;
+
+        int[] F = new int[N + 1];
+
+        F[0] = 1;
+        F[1] = 1;
+
+
+        // 1,1,2,3,5,8,13,21,34,55
+        // 0,1,2,3,4,5,6
+
+        for (int i = 2; i <= N; i++) {
+
             F[i] = (F[i - 1] + F[i - 2])%(1<< 30) ;
         }
+
 
         int[] result = new int[N];
 
         for (int i = 0; i < N; i++) {
+
             result[i] = F[A[i]] % (1 << B[i]);
         }
 
@@ -124,8 +132,8 @@ public class Ladder {
          * */
         BigInteger[] fibs = new BigInteger[A.length + 2];
 
-        fibs[0] = new BigInteger("0");
-        fibs[1] = new BigInteger("1");
+        fibs[0] = BigInteger.ZERO;
+        fibs[1] = BigInteger.ONE;
 
         /*
          * fibs = [0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597, ....., ...]

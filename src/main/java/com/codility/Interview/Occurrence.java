@@ -1,3 +1,5 @@
+/*
+
 Let's say the string word is an occurrence of the string sequence if sequence contains word as a substring.
 
     Let's say the string word is a k-occurrence of the string sequence if sequence contains word repeated k times as a substring. Note that if word is an occurrence of sequence, it is a 1-occurrence as well.
@@ -51,4 +53,16 @@ String helloWorld(String name) {
     return "Hello, " + name;
 }
 
+*/
 
+
+public class Occurrence {
+    
+
+
+
+    public static void main(String[] args) {
+        
+        System.out.println("Hello");
+    }
+}

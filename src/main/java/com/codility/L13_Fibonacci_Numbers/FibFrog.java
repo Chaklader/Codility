@@ -142,8 +142,10 @@ public class FibFrog {
     public static int solution(int[] A) {
 
 
-        List<Integer> fibs = getFibonaciNumbers(A.length + 1);
-        boolean[] visited = new boolean[A.length];
+        int N = A.length;
+        List<Integer> fibs = getFibonaciNumbers(N + 1);
+
+        boolean[] visited = new boolean[N];
 
         Stack<Jump> stack = new Stack<Jump>();
 
@@ -188,7 +190,7 @@ public class FibFrog {
 
                 int index = curr.pos + f;
 
-                if (index > A.length) {
+                if (index > N) {
                     break;
                 }
 
@@ -197,7 +199,7 @@ public class FibFrog {
                  * would reached the opposite bank ie [(-1) + (N+1) = N]
                  * index is the index value of array "A"
                  * */
-                if (index == A.length) {
+                if (index == N) {
                     return curr.jumps + 1;
                 }
 
@@ -232,7 +234,10 @@ public class FibFrog {
 
         // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
         while (fibs.get(fibs.size() - 1) <= N) {
-            fibs.add(fibs.get(i - 1) + fibs.get(i - 2));
+
+            int value = fibs.get(i - 1) + fibs.get(i - 2);
+            fibs.add(value);
+
             i++;
         }
 

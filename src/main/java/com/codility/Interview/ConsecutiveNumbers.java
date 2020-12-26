@@ -1,3 +1,5 @@
+/*
+
 
 
 Alice and Bob are playing a game.At the beginning of the game,the players are given an array of integers numbers.Then,on each move one of the players can remove any two consecutive elements numbers[i]and numbers[i+1]from the array if numbers[i]=numbers[i+1],i.e.any matching pair of neighbouring elements can be removed.
@@ -48,4 +50,16 @@ Alice and Bob are playing a game.At the beginning of the game,the players are gi
 String helloWorld(String name){
     System.out.println("This prints to the console when you Run Tests");
     return"Hello, "+name;
+}
+*/
+
+
+public class ConsecutiveNumbers {
+
+
+    public static void main(String[] args) {
+        
+        System.out.println("");
+    }
+    
 }

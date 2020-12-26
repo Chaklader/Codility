@@ -38,8 +38,10 @@ N is an integer within the range [0..100,000];
 each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
 Complexity:
 
-expected worst-case time complexity is O(N*log(N));
-expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
+
+    expected worst-case time complexity is O(N*log(N));
+
+    expected worst-case space complexity is O(N) (not counting the storage required for input arguments).
 * */
 
 import java.util.Arrays;
@@ -71,34 +73,18 @@ public class Triangle {
 
         for (int i = 2; i < N; i++) {
 
+
+            /*
+            A[P] + A[Q] > A[R]
+            A[Q] + A[R] > A[P]
+            A[R] + A[P] > A[Q]
+            */
+
+
             /*
              * A[i] is the smallest number for the pair of A[i-1] and A[i-2]
              * */
             if (A[i - 2] + A[i - 1] > A[i]) {
-                return 1;
-            }
-        }
-
-        return 0;
-    }
-
-
-    /*
-     * solution - b
-     * */
-    public int solution4(int[] A) {
-
-        if (A.length < 3) {
-            return 0;
-        }
-
-        Arrays.sort(A);
-
-        for (int i = 2; i < A.length; i++) {
-
-            boolean isTriangle = A[i - 2] > A[i] - A[i - 1];
-
-            if (isTriangle) {
                 return 1;
             }
         }

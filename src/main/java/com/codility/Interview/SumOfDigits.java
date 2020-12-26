@@ -1,11 +1,7 @@
-package com.monytyz.billing.tenant;
-
-/**
-* Created by Chaklader on Nov, 2020
-*/
+/*
 
 
-Given an integer n,your task is to calculate the alternating sum of its digits.In other words,add up all the digits,alternating between positive and negative.
+Given an integer n,your task is to calculate the alternating sum of its digits. In other words,add up all the digits,alternating between positive and negative.
 
 For example,if n=52134,the answer should be 5-2+1-3+4=5.
 
@@ -51,4 +47,16 @@ String helloWorld(String name){
 
     System.out.println("This prints to the console when you Run Tests");
     return"Hello, "+name;
+}
+*/
+
+public class SumOfDigits {
+
+
+
+
+	public static void main(String[] args) {
+		
+	}
+	
 }

@@ -47,7 +47,9 @@ public class Nesting {
      */
     public static int solution(String S) {
 
+
         Stack<Character> stack = new Stack<Character>();
+
 
         for (int i = 0; i < S.length(); i++) {
 
@@ -79,6 +81,7 @@ public class Nesting {
         int count = 0;
         char[] chars = S.toCharArray();
 
+
         for (char c : chars) {
 
             if (c == '(') {
@@ -98,7 +101,7 @@ public class Nesting {
             }
         }
 
-        return count == 0 ? 1 : 0;
+        return (count == 0);
     }
 
 

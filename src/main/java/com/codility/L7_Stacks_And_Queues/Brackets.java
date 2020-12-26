@@ -54,24 +54,25 @@ public class Brackets {
     public static int solution(String S) {
 
 
+        int N = S.length();
+
         Stack<Character> stack = new Stack<Character>();
 
-        for (int i = 0; i < S.length(); i++) {
+
+        for (int i = 0; i < N; i++) {
+
+            char c = S.charAt(i);
 
             if (stack.size() == 0) {
-                stack.push(S.charAt(i));
+                stack.push(c);
             } 
 
-            // 
+            else if (isMatch(stack.peek(), c)) {
+                stack.pop();
+            } 
+
             else {
-
-                if (isMatch(stack.peek(), S.charAt(i))) {
-                    stack.pop();
-                } 
-
-                else {
-                    stack.push(S.charAt(i));
-                }
+                stack.push(c);
             }
         }
 
@@ -107,6 +108,7 @@ public class Brackets {
 
 
         Stack<Character> stack = new Stack<Character>();
+
 
         for (int i = 0; i < S.length(); i++) {
 
@@ -220,6 +222,7 @@ public class Brackets {
                         B--;
                         index--;
                     } 
+
                     else {
                         return 0;
                     }
@@ -262,13 +265,16 @@ public class Brackets {
      */
     public int solution4(String S) {
 
+
         Map<Character, Character> brackets = new HashMap<>();
+
 
         brackets.put(')', '(');
         brackets.put(']', '[');
         brackets.put('}', '{');
 
         Stack<Character> stack = new Stack<>();
+
 
         for (int i = 0; i < S.length(); i++) {
 
@@ -302,6 +308,7 @@ public class Brackets {
     }
 
     private boolean isClosingBracket(char bracket) {
+
         return new ArrayList<>(Arrays.asList(')', ']', '}')).contains(bracket);
     }
 
@@ -317,4 +324,9 @@ public class Brackets {
         System.out.println(stack.peek());
         System.out.println(stack.lastElement());
     }
+
+
+
+
+
 }

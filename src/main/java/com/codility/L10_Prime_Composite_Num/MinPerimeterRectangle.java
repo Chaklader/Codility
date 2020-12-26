@@ -50,9 +50,9 @@ public class MinPerimeterRectangle {
 
             if (N % i == 0) {
 
-                int area = 2 * (i + N / i);
+                int perimeter = 2 * (i + N / i);
 
-                min = area < min ? area : min;
+                min = perimeter < min ? perimeter : min;
             }
         }
 

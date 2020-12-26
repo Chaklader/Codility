@@ -96,6 +96,7 @@ public class CountDistinctSlices {
      * */
     public static int solution1(int M, int[] A) {
 
+        // each element of array A is an integer within the range [0..M]
         boolean[] visited = new boolean[M + 1];
 
         int N = A.length;
@@ -103,6 +104,14 @@ public class CountDistinctSlices {
         int result = 0;
 
         while (i < N) {
+
+            /*
+                A[0] = 3
+                A[1] = 4
+                A[2] = 5
+                A[3] = 5
+                A[4] = 2
+            */
 
             int count = 0;
             while (i < N && !visited[A[i]]) {

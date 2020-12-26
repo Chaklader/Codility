@@ -1,7 +1,8 @@
 package com.codility.L3_Time_Complexity;
 
 /*
-* A non-empty array A consisting of N integers is given. Array A represents numbers on A tape.
+
+A non-empty array A consisting of N integers is given. Array A represents numbers on A tape.
 
 Any integer P, such that 0 < P < N, splits this tape into two non-empty parts: A[0], A[1], ..., A[P − 1] and A[P], A[P + 1], ..., A[N − 1].
 
@@ -19,10 +20,11 @@ For example, consider array A such that:
 
 We can split this tape in four places:
 
-P = 1, difference = |3 − 10| = 7
-P = 2, difference = |4 − 9| = 5
-P = 3, difference = |6 − 7| = 1
-P = 4, difference = |10 − 3| = 7
+    P = 1, difference = |3 − 10| = 7
+    P = 2, difference = |4 − 9| = 5
+    P = 3, difference = |6 − 7| = 1
+    P = 4, difference = |10 − 3| = 7
+
 Write A function:
 
 class Solution { public int solution(int[] A); }
@@ -64,20 +66,26 @@ Assume that:
 public class TapeEquilibrium {
 
 
+
+
     /*
      * solution - a
      * */
     public static int solution(int[] A) {
 
 
-//      int result = Integer.MAX_VALUE;
-        int result = (1 << 31);
+        int result = Integer.MAX_VALUE;
+//         int result = (1 << 31);
 
         int tmp = 0;
         int sum = 0;
 
-        for (int i = 0; i < A.length; i++) {
-            sum += A[i];
+        // for (int i = 0; i < A.length; i++) {
+        //     sum += A[i];
+        // }
+
+        for (int a : A) {
+            sum += a;
         }
 
         for (int i = 0; i < A.length - 1; i++) {
@@ -122,6 +130,7 @@ public class TapeEquilibrium {
 
         return result;
     }
+
 
     /*
      * get the lesser value between the provided two values
@@ -178,6 +187,7 @@ public class TapeEquilibrium {
         }
 
         int[] D = new int[A.length];
+
         D[D.length - 1] = A[D.length - 1];
 
         for (int i = A.length - 2; i >= 0; i--) {
@@ -192,7 +202,6 @@ public class TapeEquilibrium {
 
         return min;
     }
-    // // // //// // 
 
 
 }

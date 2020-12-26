@@ -130,7 +130,9 @@ public class CyclicRotation {
         for (int i = 0; i < N; i++) {
 
             if (i + K > N - 1) {
+               
                 map.put(i + K - N, A[i]);
+                // map.put((i + K)% N, A[i]);
             } 
 
             else 

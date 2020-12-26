@@ -64,14 +64,6 @@ public class AbsDistinct {
         for (int i = 0; i < N; i++) {
 
             int abs = Math.abs(A[i]);
-
-            /**
-             * It doesn't make sense as the Set<Integer> will make the distinct values
-             **/              
-            // if(set.contains(abs)){
-            //     continue;
-            // }
-
             set.add(abs);
         }
 
@@ -168,7 +160,9 @@ public class AbsDistinct {
             if (currHead >= currTail) {
                 currMaxValue = currHead;
                 low++;
-            } else {
+            } 
+
+            else {
                 currMaxValue = currTail;
                 high--;
             }

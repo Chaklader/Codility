@@ -84,6 +84,8 @@ public class Distinct {
 
         int result = ((Long) Arrays.stream(A).boxed().distinct().count()).intValue();
         return result;
+
+        // return (int) Arrays.stream(A).distinct().count();
     }
 
 
@@ -136,4 +138,22 @@ public class Distinct {
 
         return counter;
     }
+
+
+
+    /*
+     * solution - e
+     */
+    public static int solution5(int[] A) {
+
+        Set<Integer> set = new HashSet<>();
+        
+        for (int a: A){
+            set.add(a);
+        }
+        
+        return set.size();
+    }
+
+
 }

@@ -9,8 +9,9 @@ increase(X) − counter X is increased by 1,
 getMax counter − all counters are set to the maximum value of any counter.
 A non-empty array A of M integers is given. This array represents consecutive operations:
 
-if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),
-if A[K] = N + 1 then operation K is getMax counter.
+    if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),
+    if A[K] = N + 1 then operation K is getMax counter.
+
 For example, given integer N = 5 and array A such that:
 
 
@@ -268,10 +269,15 @@ public class MaxCounters {
         for (int i = 0; i < A.length; i++) {
 
             if (A[i] <= N) {
+
                 P[A[i] - 1]++;
-            } else if (A[i] == N + 1) {
+            } 
+
+            else if (A[i] == N + 1) {
                 maxCounter(P);
-            } else {
+            } 
+
+            else {
 
             }
         }
@@ -306,4 +312,6 @@ public class MaxCounters {
 
         return max;
     }
+
+    
 }

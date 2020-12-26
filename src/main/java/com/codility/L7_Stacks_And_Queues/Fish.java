@@ -54,6 +54,7 @@ import java.util.Stack;
 public class Fish {
 
 
+
     /*
      * solution - a
      * */
@@ -77,6 +78,7 @@ public class Fish {
                 while (!stack.isEmpty()) {
 
                     deadFish++;
+
                     if (A[i] < A[stack.peek()]) {
                         break;
                     }

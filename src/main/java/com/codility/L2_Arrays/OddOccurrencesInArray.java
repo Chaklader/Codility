@@ -107,6 +107,7 @@ public class OddOccurrencesInArray {
 
         Map<Integer, Integer> map = new LinkedHashMap<>();
 
+
         for (int i = 0; i < N; i++) {
 
             if (!map.containsKey(A[i])) {
@@ -124,6 +125,7 @@ public class OddOccurrencesInArray {
             return value;
         }
 
+        // map.keySet().iterator().next()  
         // return map.size() == 1 ? map.entrySet().iterator().next().getKey() : -1;
 
         return -1;

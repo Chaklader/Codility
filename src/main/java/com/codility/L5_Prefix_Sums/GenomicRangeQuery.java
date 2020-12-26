@@ -10,6 +10,7 @@ For example, consider string S = CAGCCTA and arrays P, Q such that:
     P[0] = 2    Q[0] = 4
     P[1] = 5    Q[1] = 5
     P[2] = 0    Q[2] = 6
+
 The answers to these M = 3 queries are as follows:
 
 The part of the DNA between positions 2 and 4 contains nucleotides G and C (twice), whose impact factors are 3 and 2 respectively, so the answer is 2.
@@ -66,7 +67,14 @@ public class GenomicRangeQuery {
         int[] C = new int[N];
 
         for (int i = 0; i < N; i++) {
-            C[i] = getImpactFactor(S, P[i], Q[i]);
+
+            int value = getImpactFactor(S, P[i], Q[i]);
+
+            if(value == -1){
+                continue;
+            }
+
+            C[i] = value;
         }
 
         return C;
@@ -78,6 +86,16 @@ public class GenomicRangeQuery {
      *  have impact factors of 1, 2, 3 and 4
      * */
     public int getImpactFactor(String S, int i, int j) {
+
+        int N = S.length();
+
+        if(i < 0 || i > N-1){
+            return -1;
+        }
+
+        if(j < 0 || j > N-1){
+            return -1;
+        }
 
         String temp = S.substring(i, j + 1);
 

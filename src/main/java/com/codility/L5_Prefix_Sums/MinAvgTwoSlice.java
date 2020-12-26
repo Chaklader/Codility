@@ -98,6 +98,7 @@ public class MinAvgTwoSlice {
         double min = (double) sum / 2;
         double temp = min;
 
+
         while (true) {
 
             /*
@@ -130,6 +131,7 @@ public class MinAvgTwoSlice {
                 min = temp;
             }
         }
+
     }
 
 
@@ -139,31 +141,34 @@ public class MinAvgTwoSlice {
     public static int solution1(int[] A) {
 
 
-        int startIndex = 0;
+        int k = 0;
         double min = (double) (A[0] + A[1]) / 2;
 
+        int N = A.length;
 
-        for (int j = 0; j < A.length - 2; j++) {
+
+        for (int j = 0; j < N - 2; j++) {
+
 
             if ((double) (A[j] + A[j + 1]) / 2 < min) {
+                
                 min = (double) (A[j] + A[j + 1]) / 2;
-//                startIndex = j;
+                k = j;
             }
 
             if ((double) (A[j] + A[j + 1] + A[j + 2]) / 3 < min) {
+
                 min = (double) (A[j] + A[j + 1] + A[j + 2]) / 3;
-//                startIndex = j;
-            }
-
-            startIndex = j;
+                k = j;
+            }        
         }
 
 
-        if ((double) (A[A.length - 1] + A[A.length - 2]) / 2 < min) {
-            return A.length - 2;
+        if ((double) (A[N - 1] + A[N - 2]) / 2 < min) {
+            return  (N - 2);
         }
 
-        return startIndex;
+        return k;
     }
 
 
@@ -174,11 +179,10 @@ public class MinAvgTwoSlice {
 
 
         int[] C = new int[A.length];
+
         C[0] = A[0];
 
-        /*
-         * make pref sums array
-         * */
+
         for (int i = 1; i < A.length; i++) {
             C[i] = C[i - 1] + A[i];
         }
@@ -219,6 +223,7 @@ public class MinAvgTwoSlice {
         return minIndex;
     }
 
+
     public static double getAverage(int[] C, int P, int Q) {
 
         int sub = 0;
@@ -239,10 +244,12 @@ public class MinAvgTwoSlice {
      * */
     public static int solution3(int[] A) {
 
+
         double minAvg = Double.MAX_VALUE;
         int minIndex = 0;
 
         int N = A.length;
+
 
         for (int i = 0; i < N; i++) {
 
@@ -269,4 +276,6 @@ public class MinAvgTwoSlice {
 
         return minIndex;
     }
+
+
 }

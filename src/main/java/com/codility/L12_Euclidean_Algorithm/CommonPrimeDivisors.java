@@ -85,7 +85,7 @@ public class CommonPrimeDivisors {
 
                 x /= temp;
             }
-
+            
             if (x != 1) {
                 continue;
             }

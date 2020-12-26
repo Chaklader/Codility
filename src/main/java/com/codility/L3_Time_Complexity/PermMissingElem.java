@@ -53,6 +53,17 @@ public class PermMissingElem {
 
         int N = A.length;
 
+        if(N == 0){
+            return 1;
+        }
+
+
+        /*
+            A[0] = 2
+            A[1] = 3
+            A[2] = 1
+            A[3] = 5
+        */
         for (int i = 0; i < N; i++) {
 
             if (A[i] == 0) {
@@ -79,8 +90,6 @@ public class PermMissingElem {
 
         return (N + 1);
     }
-
-
 
 
     /*

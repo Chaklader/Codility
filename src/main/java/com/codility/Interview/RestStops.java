@@ -203,10 +203,6 @@ public class RestStops {
             } 
 
             else {
-
-                /*
-                 * we have a match C[middle] equals key
-                 * */
                 return (middle + 1);
             }
         }

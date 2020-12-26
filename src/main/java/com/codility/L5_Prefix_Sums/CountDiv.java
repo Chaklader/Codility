@@ -62,11 +62,11 @@ public class CountDiv {
     /*
      * solution - b
      */
-    public static int solution1(int a, int b, int k) {
+    public static int solution1(int A, int B, int K) {
 
-        int result = b / k - a / k;
+        int result = B/K - A/K;
 
-        if (a % k == 0) {
+        if (A % K == 0 || B % K == 0) {
             result++;
         }
 
