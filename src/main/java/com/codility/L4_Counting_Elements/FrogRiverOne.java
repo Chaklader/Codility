@@ -112,9 +112,13 @@ public class FrogRiverOne {
                 P[index] = 1;
                 distance--;
 
-                if (distance == 0) {
-                    return i;
-                }
+                // if (distance == 0) {
+                //     return i;
+                // }
+            }
+
+            if (distance == 0) {
+                return i;
             }
         }
 

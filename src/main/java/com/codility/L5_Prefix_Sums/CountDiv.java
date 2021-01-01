@@ -50,24 +50,10 @@ public class CountDiv {
     public static int solution(int A, int B, int K) {
 
 
-        // if (A % K == 0) {
-        if (A % K == 0 || B % K == 0) {
-            return 1 + (B - A) / K;
-        }
-
-        return (B - A) / K;
-    }
-
-
-    /*
-     * solution - b
-     */
-    public static int solution1(int A, int B, int K) {
-
-        int result = B/K - A/K;
+        int result = (B - A) / K;
 
         if (A % K == 0 || B % K == 0) {
-            result++;
+            return result +1;
         }
 
         return result;

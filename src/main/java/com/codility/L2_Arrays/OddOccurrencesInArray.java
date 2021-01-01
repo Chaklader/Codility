@@ -58,6 +58,7 @@ public class OddOccurrencesInArray {
      * solution - a
      * */
     // 100 %
+    // This code doesn't work if there is no unique value in the array 
     public int solution(int[] arr) {
 
         int result = arr[0];
@@ -89,8 +90,11 @@ public class OddOccurrencesInArray {
             } 
 
             // list.remove works with the indexs 
+            // Otherwsie, remove by the objects 
+
             else {                
-                list.remove(list.indexOf(A[i]));
+             //   list.remove(list.indexOf(A[i]));
+               list.remove((Integer) a);
             }
         }
 

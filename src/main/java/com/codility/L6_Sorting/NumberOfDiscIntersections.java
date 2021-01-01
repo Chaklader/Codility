@@ -118,6 +118,7 @@ public class NumberOfDiscIntersections {
     /*
      * solution - a
      * */
+
     /*
      * if a disc has leftmost point <= 0, their rightmost point is > 0. We
      * consider other discs leftmost to compare the the rightmost points of
@@ -129,18 +130,10 @@ public class NumberOfDiscIntersections {
         int N = A.length;
         int[] sum = new int[N];
 
+
         for (int i = 0; i < N; i++) {
 
-            int right;
-
-            if (N - 1 >= A[i] + i) {
-                right = i + A[i];
-            }             
-
-            else {
-                right = N - 1;
-            }
-
+            int right = (A[i] + i) <= (N - 1) ? (i + A[i]) : N-1;
             sum[right]++;
         }
 
@@ -162,18 +155,8 @@ public class NumberOfDiscIntersections {
 
         for (int j = 0; j < N; j++) {
 
-            int left;
 
-            // the left point is (j - A[j]) and not the (A[j] - j)
-            // if (j - A[j] <= 0) {
-            //     left = 0;
-            // } 
-
-            // else {
-            //     left = j - A[j];
-            // }
-
-            left = (j - A[j] <= 0)? 0 : (j - A[j]);
+            int left = (j - A[j] <= 0)? 0 : (j - A[j]);
 
             /*
              * sum[i] is the count of the discs have rigthmost points in the range

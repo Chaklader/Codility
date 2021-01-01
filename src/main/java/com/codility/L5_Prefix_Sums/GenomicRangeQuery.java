@@ -101,9 +101,13 @@ public class GenomicRangeQuery {
 
         if (temp.contains("A")) {
             return 1;
-        } else if (temp.contains("C")) {
+        } 
+
+        else if (temp.contains("C")) {
             return 2;
-        } else if (temp.contains("G")) {
+        }
+
+        else if (temp.contains("G")) {
             return 3;
         }
 
@@ -116,6 +120,7 @@ public class GenomicRangeQuery {
      * solution - b
      * */
     public static int[] solution1(String S, int[] P, int[] Q) {
+
 
         int[] C = new int[P.length];
         Map<Integer, ArrayList<Integer>> prefSums = getPrefixSum(S);

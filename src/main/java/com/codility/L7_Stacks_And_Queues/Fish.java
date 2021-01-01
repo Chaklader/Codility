@@ -78,18 +78,17 @@ public class Fish {
                 while (!stack.isEmpty()) {
 
                     deadFish++;
-
-                    if (A[i] < A[stack.peek()]) {
+                    if (A[i] < stack.peek()) {
                         break;
                     }
-
+                    
                     stack.pop();
                 }
+
+                continue;
             }
 
-            else {
-                stack.push(i);
-            }
+            stack.push(A[i]); 
         }
 
         return totalFish - deadFish;

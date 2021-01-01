@@ -59,21 +59,14 @@ public class Distinct {
      */
     public static int solution1(int[] A) {
 
+        Set<Integer> set = new HashSet<Integer>();
 
-        Integer[] boxedA = Arrays.stream(A).boxed().toArray(Integer[]::new);
-//        Integer[] boxedA1 = IntStream.of(A).boxed().toArray( Integer[]::new );
+        for (int a : A) {            
+            set.add(a);
+        }
 
-        Set<Integer> mySet = new HashSet<Integer>(Arrays.asList(boxedA));
-
-//        Set<Integer> mySet = new HashSet<Integer>();
-//        Collections.addAll(mySet, boxedA);
-
-        // In Java 9+, if unmodifiable set is ok:
-        // Set<Integer> mySet = Set.of(boxedA);
-
-        // In Java 10+, the generic type parameter can be inferred from the arrays component type:
-        // var mySet = Set.of(boxedA);
-        return mySet.size();
+        int size =  set.size();
+        return size;
     }
 
 

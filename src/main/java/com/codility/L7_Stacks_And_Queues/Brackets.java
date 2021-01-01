@@ -178,7 +178,9 @@ public class Brackets {
         char[] storage = new char[N];
         int index = 0;
 
+
         for (char ch : str.toCharArray()) {
+
 
             switch (ch) {
 
@@ -189,14 +191,12 @@ public class Brackets {
                 }
 
                 case '{': {
-
                     B++;
                     storage[index++] = ch;
                     break;
                 }
 
                 case '[': {
-
                     S++;
                     storage[index++] = ch;
                     break;

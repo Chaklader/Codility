@@ -75,7 +75,7 @@ public class TapeEquilibrium {
 
 
         int result = Integer.MAX_VALUE;
-//         int result = (1 << 31);
+//         int result = (1 << 30);
 
         int tmp = 0;
         int sum = 0;
@@ -91,7 +91,9 @@ public class TapeEquilibrium {
         for (int i = 0; i < A.length - 1; i++) {
 
             tmp += A[i];
-            result = Math.min(result, Math.abs(tmp - (sum - tmp)));
+
+            int current = Math.abs(tmp - (sum - tmp));
+            result = Math.min(result, current);
         }
 
         return result;
@@ -136,14 +138,11 @@ public class TapeEquilibrium {
      * get the lesser value between the provided two values
      * */
     public int less(int a, int b) {
-
         if (a <= b) {
             return a;
         } 
 
-        else {
-            return b;
-        }
+        return b;
     }
 
 
@@ -167,7 +166,8 @@ public class TapeEquilibrium {
             left += A[i - 1];
             right -= A[i - 1];
 
-            result = Math.max(Math.abs(right - left), result);
+            int value = Math.abs(right - left);
+            result = result > value? result: value;
         }
 
         return result;

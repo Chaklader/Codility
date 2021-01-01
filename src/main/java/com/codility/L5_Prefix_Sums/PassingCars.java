@@ -54,8 +54,39 @@ Complexity:
 public class PassingCars {
 
 
+
     /*
      * solution - a (1)
+     * */
+    public static int solution(int[] A) {
+
+        int N = A.length;
+
+        int countZero = 0;
+        int result = 0;
+
+        for (int i = 0; i < N; i++) {
+
+            if (A[i] == 0) {
+                
+                countZero++;
+                continue;
+            } 
+
+            result += countZero;
+
+            if (result > 1000000000) {
+                return -1;
+            }
+        }
+
+        return result;
+    }
+
+
+
+    /*
+     * solution - a (2)
      * */
     public static int solution(int[] A) {
 
@@ -82,33 +113,6 @@ public class PassingCars {
 
         return result;
     }
-
-
-    /*
-     * solution - a (2)
-     * */
-    public static int solution(int[] A) {
-
-        int N = A.length;
-
-        int countZero = 0;
-        int result = 0;
-
-        for (int i = 0; i < N; i++) {
-
-            if (A[i] == 0) {
-                countZero++;
-            } 
-
-            else {
-                result += countZero;
-            }
-        }
-
-        return result;
-    }
-
-
 
 
     /*

@@ -57,7 +57,6 @@ public class PermMissingElem {
             return 1;
         }
 
-
         /*
             A[0] = 2
             A[1] = 3
@@ -113,6 +112,7 @@ public class PermMissingElem {
      * solution - e
      */
     public int solution5(int[] A) {
+
 
         int N = A.length;
 

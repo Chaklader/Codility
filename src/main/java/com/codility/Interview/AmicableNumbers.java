@@ -44,7 +44,7 @@ public class AmicableNumbers{
 
     public static int findDivisors(int N) {
 
-        List<Integer> res = new ArrayList<>();
+        Set<Integer> res = new HashSet<>();
 
         for (int i = 1; i * i <= N; i++) {
 
@@ -55,8 +55,6 @@ public class AmicableNumbers{
         }
 
         Collections.sort(res);
-        res.remove(res.size() - 1);
-
         int sum = res.stream().distinct().reduce(0, Integer::sum);
 
         return sum;

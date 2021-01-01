@@ -149,7 +149,6 @@ public class MinAvgTwoSlice {
 
         for (int j = 0; j < N - 2; j++) {
 
-
             if ((double) (A[j] + A[j + 1]) / 2 < min) {
                 
                 min = (double) (A[j] + A[j + 1]) / 2;

@@ -111,27 +111,31 @@ public class StoneWall {
                 count++;
             }
 
-            // higher
             else if (stack.peek() < H[i]) {
+
                 stack.push(H[i]);
                 count++;
             }
 
-            // lower
             else if (stack.peek() > H[i]) {
 
-                while (!stack.isEmpty() && H[i] <= stack.peek()) {
+                while (H[i] <= stack.peek()) {
 
                     if (H[i] == stack.peek()) {
                         count--;
                     }
 
                     stack.pop();
+
+                    if(stack.isEmpty()){
+                        break;
+                    }
                 }
 
                 stack.push(H[i]);
                 count++;
             }
+            
         }
 
         return count;

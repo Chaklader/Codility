@@ -53,22 +53,22 @@ public class Nesting {
 
         for (int i = 0; i < S.length(); i++) {
 
-            if (S.charAt(i) == '(') {
+            char ch = S.charAt(i);
+
+            if (ch == '(') {
                 stack.push('(');
             } 
 
-            // 
-            else if (S.charAt(i) == ')' && stack.size() > 0) {
+            else if (ch == ')' && stack.size() > 0) {
                 stack.pop();
             }
 
-            // 
-            else {
+            else 
                 return 0;
-            }
+
         }
 
-        return stack.size() == 0 ? 1 : 0;
+        return stack.size() == 0;
     }
 
 

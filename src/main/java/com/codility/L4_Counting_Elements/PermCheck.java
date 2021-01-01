@@ -79,7 +79,7 @@ public class PermCheck {
 
         for (int i = 0; i < A.length; i++) {
 
-            if (A[i] > A.length) {
+            if (A[i] > N) {
                 return 0;
             }
 
@@ -115,14 +115,19 @@ public class PermCheck {
      */
     public static int solution1(int[] A) {
 
-        /*
-         * the time complexity is O(N*log(N))
-         * */
         Arrays.sort(A);
 
-        for (int i = 0; i < A.length; i++) {
+        int N = A.length;
 
-            if (A[i] != i + 1) {
+        for (int i = 0; i < N; i++) {
+
+            if(A[i] > N){
+                return 0;
+            }
+
+            int j = A[i] -1;
+
+            if (i != j) {
                 return 0;
             }
         }

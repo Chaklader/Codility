@@ -57,6 +57,7 @@ public class CyclicRotation {
      * */
     public int[] solution(int[] A, int K) {
 
+
         int N = A.length;
 
         if (A == null || K > N) {
@@ -98,6 +99,7 @@ public class CyclicRotation {
     public static void reverse(int[] A, int start, int end) {
 
         int i = start, j = end;
+
         while (i < j) {
 
             if (A[i] != A[j]) {
@@ -152,12 +154,15 @@ public class CyclicRotation {
      * */
     public int[] solution2(int[] A, int K) {
 
+
         int[] result = new int[A.length];
         int N = A.length;
+
 
         for (int i = 0; i < N; i++) {
             result[(i + K) % N] = A[i];
         }
+
 
         return result;
     }

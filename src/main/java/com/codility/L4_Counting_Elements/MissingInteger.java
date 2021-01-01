@@ -47,11 +47,13 @@ public class MissingInteger {
             return 1;
         }
 
+
         List<Integer> list = IntStream.of(A).boxed()
                 .filter(x -> x > 0).sorted().distinct()
                 .collect(Collectors.toCollection(ArrayList<Integer>::new));
 
         int M = list.size();
+
 
         for (int i = 0; i < M; i++) {
 
@@ -76,6 +78,7 @@ public class MissingInteger {
         boolean[] counter = new boolean[N + 1];
 
         int M = counter.length;
+
 
         for (int a : A) {
 
@@ -116,15 +119,22 @@ public class MissingInteger {
         int index = 0;
 
         for (int a : set) {
-            C[index++] = a;
-        }
 
-        for (int i = 0; i < N; i++) {
+            if(a > 0 && a <= N){
 
-            if (C[i] > 0 && C[i] <= N) {
-                C[i] = 0;
+                C[index++] = 0;
+                continue;
             }
+
+            C[index++] = a; 
         }
+
+        // for (int i = 0; i < N; i++) {
+
+        //     if (C[i] > 0 && C[i] <= N) {
+        //         C[i] = 0;
+        //     }
+        // }
 
         for (int i = 0; i < N; i++) {
 

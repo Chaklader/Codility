@@ -73,17 +73,6 @@ public class Triangle {
 
         for (int i = 2; i < N; i++) {
 
-
-            /*
-            A[P] + A[Q] > A[R]
-            A[Q] + A[R] > A[P]
-            A[R] + A[P] > A[Q]
-            */
-
-
-            /*
-             * A[i] is the smallest number for the pair of A[i-1] and A[i-2]
-             * */
             if (A[i - 2] + A[i - 1] > A[i]) {
                 return 1;
             }

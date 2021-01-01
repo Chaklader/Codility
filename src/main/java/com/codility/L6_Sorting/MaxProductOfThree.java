@@ -58,6 +58,7 @@ public class MaxProductOfThree {
      */
     public static int solution(int[] A) {
 
+
         Arrays.sort(A);
         int N = A.length;
 
