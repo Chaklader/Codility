@@ -47,6 +47,10 @@ public class Nesting {
      */
     public static int solution(String S) {
 
+        if(S.isEmpty()){
+            return 1;
+        }
+
         Stack<Character> stack = new Stack<Character>();
 
         for (int i = 0; i < S.length(); i++) {

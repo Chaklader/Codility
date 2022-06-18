@@ -57,7 +57,6 @@ public class CyclicRotation {
      * */
     public int[] solution(int[] A, int K) {
 
-
         int N = A.length;
 
         if (A == null || K > N) {
@@ -123,7 +122,33 @@ public class CyclicRotation {
     /*
      * solution - b
      * */
-    public int[] solution1(int[] A, int K) {
+    public static int[] solution1(int[] A, int K) {
+
+
+        final int N = A.length;
+        int[] result = new int[N];
+
+        if(K == N){
+            return A;
+        }
+
+        if(Arrays.stream(A).distinct().count() == 1){
+            return A;
+        }
+
+        for (int i = 0; i < N; i++) {
+
+            int index = (i + K) % N;
+            result[index] = A[i];
+        }
+
+        return result;
+    }
+
+    /*
+     * solution - c
+     * */
+    public int[] solution2(int[] A, int K) {
 
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -149,21 +174,5 @@ public class CyclicRotation {
     }
 
 
-    /*
-     * solution - c
-     * */
-    public int[] solution2(int[] A, int K) {
-
-
-        int[] result = new int[A.length];
-        int N = A.length;
-
-
-        for (int i = 0; i < N; i++) {
-            result[(i + K) % N] = A[i];
-        }
-
-
-        return result;
-    }
+    
 }

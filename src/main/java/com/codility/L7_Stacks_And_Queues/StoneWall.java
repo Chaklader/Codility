@@ -44,7 +44,6 @@ public class StoneWall {
      */
     public static int solution(int[] H) {
 
-
         Stack<Integer> stack = new Stack<Integer>();
 
         int count = 1;

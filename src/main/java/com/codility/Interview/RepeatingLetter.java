@@ -64,7 +64,7 @@ public  class repeatingLetter{
     * solution - B
     */
 
-    public static String solution(int A, int B) {
+    public static String solution1(int A, int B) {
         
         if (A >= B) {
             return formation(A, B);

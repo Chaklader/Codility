@@ -110,29 +110,30 @@ public class MaxCounters {
         int currMax = 0;
         int currMin = 0;
 
+        /**
+         *
+         *  A[0] = 3
+         *  A[1] = 4
+         *  A[2] = 4
+         *  A[3] = 6
+         *  A[4] = 1
+         *  A[5] = 4
+         *  A[6] = 4
+         *
+         *  (0, 0, 1, 0, 0)    (0, 0, 1, 0, 0)
+         *  (0, 0, 1, 1, 0)    (0, 0, 1, 1, 0)
+         *  (0, 0, 1, 2, 0)    (0, 0, 1, 2, 0)
+         *  (2, 2, 2, 2, 2)    (0, 0, 1, 2, 0)
+         *  (3, 2, 2, 2, 2)    (3, 0, 1, 2, 0)
+         *  (3, 2, 2, 3, 2)    (3, 0, 1, 3, 0)
+         *  (3, 2, 2, 4, 2)    (3, 0, 1, 4, 0)
+         *
+         *                     (3, 2, 2, 4, 2)
+         *
+         */
+        
         for (int i = 0; i < A.length; i++) {
 
-            /**
-             *
-             *  A[0] = 3
-             *  A[1] = 4
-             *  A[2] = 4
-             *  A[3] = 6
-             *  A[4] = 1
-             *  A[5] = 4
-             *  A[6] = 4
-             *
-             *  (0, 0, 1, 0, 0)    (0, 0, 1, 0, 0)
-             *  (0, 0, 1, 1, 0)    (0, 0, 1, 1, 0)
-             *  (0, 0, 1, 2, 0)    (0, 0, 1, 2, 0)
-             *  (2, 2, 2, 2, 2)    (0, 0, 1, 2, 0)
-             *  (3, 2, 2, 2, 2)    (3, 0, 1, 2, 0)
-             *  (3, 2, 2, 3, 2)    (3, 0, 1, 3, 0)
-             *  (3, 2, 2, 4, 2)    (3, 0, 1, 4, 0)
-             *
-             *                     (3, 2, 2, 4, 2)
-             *
-             */
             if (1 <= A[i] && A[i] <= N) {
 
                 result[A[i] - 1] = Math.max(currMin, result[A[i] - 1]);
@@ -165,7 +166,7 @@ public class MaxCounters {
     /*
     * solution - a1
     */
-    public static int[] solution(int N, int[] A) {
+    public static int[] solution1(int N, int[] A) {
 
         int[] result = new int[N];
 
@@ -217,7 +218,7 @@ public class MaxCounters {
      * improve the previous method, time complexity is O(N+M).
      * Keep the lastUpdate as the lasgest value in the last round
      * */
-    public int[] solution1(int N, int[] A) {
+    public int[] solution2(int N, int[] A) {
 
 
         int[] C = new int[N];
@@ -262,7 +263,7 @@ public class MaxCounters {
     /*
      * solution - c
      */
-    public int[] solution2(int N, int[] A) {
+    public int[] solution3(int N, int[] A) {
 
         int P[] = new int[N];
 

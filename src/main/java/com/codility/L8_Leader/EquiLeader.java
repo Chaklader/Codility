@@ -104,20 +104,20 @@ public class EquiLeader {
 
         int dominator = stack.peek();
 
-        // int numOfDominator = 0;
+        int numOfDominator = 0;
 
-        // for (int i = 0; i < A.length; i++) {
+        for (int i = 0; i < A.length; i++) {
 
-        //     if (A[i] == dominator) {
-        //         numOfDominator++;
-        //     }
-        // }
-
-        int numOfDominator = stack.size();
-
-        if (numOfDominator <= A.length / 2) {
-            return 0;
+            if (A[i] == dominator) {
+                numOfDominator++;
+            }
         }
+
+        // int numOfDominator = stack.size();
+
+        // if (numOfDominator <= A.length / 2) {
+        //     return 0;
+        // }
 
         int numOfNonDominator = A.length - numOfDominator;
 
