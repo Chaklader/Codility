@@ -81,7 +81,7 @@ public class PhoneNumber {
     /*
      * solution - b
      * */
-    public static String solution(String S) {
+    public static String solution1(String S) {
 
         if (S == null || S.isEmpty()) {
             return S;
@@ -139,7 +139,7 @@ public class PhoneNumber {
     /*
      * solution - c
      * */
-    public static String solution1(String s) {
+    public static String solution2(String s) {
 
         if (s == null) {
             return null;
@@ -156,7 +156,7 @@ public class PhoneNumber {
     /*
      * solution - d
      * */
-    public static String solution2(String input) {
+    public static String solution3(String input) {
 
         if (input == null) {
             return input;

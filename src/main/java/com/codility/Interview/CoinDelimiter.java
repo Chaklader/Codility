@@ -12,8 +12,7 @@ We can use one coin of 25 cents and one of 5 cents
 
 Input: coins[] = {9, 6, 5, 1}, V = 11
 Output: Minimum 2 coins required
-We can use one coin of 6 cents and 1 coin of 5 cents
-Recommended: Please solve it on “PRACTICE ” first, before moving on to the solution. 
+We can use one coin of 6 cents and one coin of 5 cents
  
 This problem is a variation of the problem discussed Coin Change Problem. Here instead of finding total number of possible solutions, we need to find the solution with minimum number of coins.
 
@@ -27,7 +26,7 @@ public class CoinDelimiter {
 	// 16 = 9+7 result 2 
     // 25 = 9+7+9 result 3 
     
-    public static int CoinDeterminer(int num) {
+    public static int coinDeterminer(int num) {
 
         int result = Integer.MAX_VALUE;
         int[] coins = {11, 9, 7, 5, 1};
@@ -39,7 +38,7 @@ public class CoinDelimiter {
         for (int coin : coins) {
 
             if (coin <= num) {
-                int sub_res = CoinDeterminer(num - coin);
+                int sub_res = coinDeterminer(num - coin);
 
                 if (sub_res != Integer.MAX_VALUE && sub_res + 1 < result) {
                     result = sub_res + 1;
@@ -56,6 +55,6 @@ public class CoinDelimiter {
 //
 //        System.out.println(Palindrome(s));
 
-        System.out.println(CoinDeterminer(25));
+        System.out.println(coinDeterminer(25));
     }
 }

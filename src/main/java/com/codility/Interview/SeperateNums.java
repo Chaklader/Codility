@@ -1,6 +1,9 @@
+/*
+**
+**
+**
 
-
-/*question: write an algorithm to separate 
+question: write an algorithm to separate 
 the numbers in an array such that negative 
 numbers are at the beginning and positive 
 numbers at the end without changing the order. 
@@ -9,7 +12,9 @@ it in O(n) time and O(1) space, both with and
 without additional data-structure
 
 int[] arr = {9, 2, -3, 1, 0, 0, -7, -6, 3, -5, 2}; // test data 
-int[] result = {-3, -7, -6, -5, 9, 2, 1, 0, 0, 3, 2};*/
+int[] result = {-3, -7, -6, -5, 9, 2, 1, 0, 0, 3, 2};
+
+**/
 
 
 
@@ -17,14 +22,18 @@ public  class SeperateNums {
 
 
 
-    public static int[] seperateNums(int[] arr){
+    public static int[] solution(int[] A){
 
-        int val = 0, index = 0, negIndex = 0;
+        int val = 0;
+        int index = 0;
+        int negIndex = 0;
+
+        int N = A.length;
      
-        for ( int i = 0; i < arr.length; i++) {
+        // int[] A = {9, 2, -3, 1, 0, 0, -7, -6, 3, -5, 2}
+        for ( int i = 0; i < N; i++) {
 
-            // we get the index and the value of the array element 
-            val = arr[i];
+            val = A[i];
             index = i;
 
             /*
@@ -34,7 +43,7 @@ public  class SeperateNums {
             */ 
             while(index > negIndex && val < 0){
 
-                arr[index] = arr[index-1];
+                A[index] = A[index-1];
                 index--;
 
                 if(negIndex == index ){
@@ -44,10 +53,10 @@ public  class SeperateNums {
                 }
             }
 
-            arr[index] = val; 
+            A[index] = val; 
         }
 
-        return arr; 
+        return A; 
     }
     /*END of solution*/
 
@@ -56,7 +65,7 @@ public  class SeperateNums {
     /*
 	* solution - b
     */
-    public static int[] solution(int[] A) {
+    public static int[] solution1(int[] A) {
 
         int N = A.length;
         int j = 0;

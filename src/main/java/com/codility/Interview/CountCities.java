@@ -168,7 +168,6 @@ public class CountCities {
      * */
     public static ArrayList<LinkedList<Node>> getSameLevelNodes(Node root) {
 
-
         ArrayList<LinkedList<Node>> result = new ArrayList<LinkedList<Node>>();
         LinkedList<Node> current = new LinkedList<Node>();
 

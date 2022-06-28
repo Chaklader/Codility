@@ -24,7 +24,7 @@ public class MergeStrings {
         boolean less = a.length() < b.length();
 
         int min = less ? a.length() : b.length();
-
+        
         String rst = "";
 
         for (int i = 0; i < min; i++) {

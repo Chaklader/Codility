@@ -59,6 +59,34 @@ string S consists only of lowercase letters (a−z). Copyright 2009–2018 by Co
 public class PrefixSuffixLength {
 
 
+
+
+    /*
+     * solution - 0
+     * */
+    public static int solution0(String S) {
+
+        final int N = S.length();
+
+        int j = 1;
+
+        while (j < N) {
+
+            String prefix = S.substring(0, N - j);
+            String suffix = S.substring(j);
+
+
+            if (prefix.equalsIgnoreCase(suffix)) {
+
+                return prefix.length();
+            }
+
+            j++;
+        }
+
+        return 0;
+    }
+
     /*
      * solution - a
      * */

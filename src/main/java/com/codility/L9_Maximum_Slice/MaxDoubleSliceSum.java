@@ -135,7 +135,6 @@ public class MaxDoubleSliceSum {
         int[] A1 = new int[N];
         int[] A2 = new int[N];
 
-
         /*
           0 ≤ X < Y < Z < N  
 

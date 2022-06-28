@@ -28,6 +28,7 @@ public class AmicableNumbers{
 
         for (int i = 1; i <= N; i++) {
 
+            // 6 = {1,2,3} 1+2+3 = 6 and we cant take the same numbers 
             int u = findDivisors(i);
 
             if (u == i) {

@@ -95,4 +95,19 @@ public class NumPermutation {
             }
         }
     }
+
+
+    private static void permutation1(String prefix, String str, Set<String> set) {
+
+        int N = str.length();
+
+        if (N == 0) {
+            set.add(prefix);
+            return;
+        }
+
+        for (int i = 0; i < N; i++) {
+            permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1), set);
+        }
+    }
 }

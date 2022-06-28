@@ -94,16 +94,64 @@ public class Peaks {
      * array A can be divided.
      * */
 
+
     /*
      * solution - a
-     */
+     * */
     public static int solution(int[] A) {
+
+        int N = A.length;
+
+        List<Integer> peaks = new ArrayList<>();
+
+        for (int i = 1; i < (N - 1); i++) {
+
+            if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
+                peaks.add(i);
+            }
+        }
+
+        int N = peaks.size();
+
+        for (int i = N; i >= 1; i--) {
+
+            if (N % i != 0) {
+                continue;
+            }
+
+            int size = N / i;
+            int count = 0;
+
+            for (int p : peaks) {
+
+                if (p / size > count) {
+                    break;
+                }
+
+                if (p / size == count) {
+                    count++;
+                }
+            }
+
+            if (i == count) {
+                return count;
+            }
+        }
+
+        return 0;
+    }
+    
+    
+    /*
+     * solution - b
+     */
+    public static int solution1(int[] A) {
 
         int N = A.length;
 
         List<Integer> peaks = new ArrayList<Integer>();
 
-        for (int i = 1; i < (A.length - 1); i++) {
+        for (int i = 1; i < N-1; i++) {
 
             if (A[i] > A[i - 1] && A[i] > A[i + 1]) {
                 peaks.add(i);
@@ -153,52 +201,6 @@ public class Peaks {
         return 0;
     }
 
-
-    /*
-     * solution - b
-     * */
-    public static int solution1(int[] A) {
-
-        int N = A.length;
-
-        List<Integer> peaks = new ArrayList<>();
-
-        for (int i = 1; i < (N - 1); i++) {
-
-            if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
-                peaks.add(i);
-            }
-        }
-
-        int N = peaks.size();
-
-        for (int i = N; i >= 1; i--) {
-
-            if (N % i != 0) {
-                continue;
-            }
-
-            int size = N / i;
-            int count = 0;
-
-            for (int p : peaks) {
-
-                if (p / size > count) {
-                    break;
-                }
-
-                if (p / size == count) {
-                    count++;
-                }
-            }
-
-            if (i == count) {
-                return count;
-            }
-        }
-
-        return 0;
-    }
 
 
     /*

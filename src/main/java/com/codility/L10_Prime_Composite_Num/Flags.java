@@ -99,6 +99,10 @@ public class Flags {
             }
         }
 
+        /*
+         * if you take K flags, then the distance between any two flags 
+         * should be greater than or equal to K. 
+         */
         for (int i = flags.size(); i >= 1; i--) {
 
             int k = flags.get(0);
@@ -129,7 +133,7 @@ public class Flags {
     /*
      * solution - a
      */
-    public static int solution(int[] A) {
+    public static int solution1(int[] A) {
 
 
         List<Integer> flags = new ArrayList<Integer>();
@@ -201,7 +205,7 @@ public class Flags {
     /*
      * solution - b
      * */
-    public static int solution1(int[] A) {
+    public static int solution2(int[] A) {
 
         int N = A.length;
 
@@ -287,7 +291,7 @@ public class Flags {
     /*
      * solution - c
      */
-    public static int solution2(int[] A) {
+    public static int solution3(int[] A) {
 
         int N = A.length;
 
@@ -350,7 +354,7 @@ public class Flags {
     /*
      * solution - d
      */
-    public static int solution3(int[] A) {
+    public static int solution4(int[] A) {
 
         int N = A.length;
 
@@ -420,7 +424,7 @@ public class Flags {
     /*
      * solution - e
      */
-    public int solution4(int[] A) {
+    public int solution5(int[] A) {
 
         if (A.length < 3) {
             return 0;
@@ -497,7 +501,7 @@ public class Flags {
     /*
      * solution - f
      */
-    public int solution5(int[] A) {
+    public int solution6(int[] A) {
 
         ArrayList<Integer> peaks = new ArrayList<>();
         if (A.length <= 2) {
@@ -584,7 +588,7 @@ public class Flags {
     /*
      * solution - g
      * */
-    public static int solution6(int[] A) {
+    public static int solution7(int[] A) {
 
         int N = A.length;
 

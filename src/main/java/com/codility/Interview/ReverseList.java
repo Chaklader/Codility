@@ -38,11 +38,11 @@ public class ReverseList {
         int left = totalCapacity - visited;
 
 
-
         ListNode<Integer> current = head;
         ListNode<Integer> next = null;
         ListNode<Integer> prev = null;
 
+        
         int count = 0;
 
         if (left < k) {

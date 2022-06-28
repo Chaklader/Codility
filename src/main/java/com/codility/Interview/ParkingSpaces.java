@@ -19,14 +19,16 @@ REMEMBER that camera can only be installed on top of an existing parking space.
 
 Example 1:
 M = 1 A = [1 , 2, 3, 4, 5]
-The result here is 2. If you place one camera on space 2, it will cover spaces 1, 2, and 3 (covers both ways), and camera on space 4 will cover space 4 and 5. It's ok to "double­cover" spaces, and note that we ARE looking at parkingSpaces[0].
+The result here is 2. If you place one camera on space 2, it will cover spaces 1, 2, and 3 (covers both ways), 
+and camera on space 4 will cover space 4 and 5. It's ok to "double­cover" spaces, and note that we ARE looking 
+at parkingSpaces[0].
 
 
 Example 2:
-M = 2
- 
-A = [2, 4, 5, 6, 7, 9, 11, 12]
-The result is 3. The optimal coverage will be achieved if you install cameras at locations 4, 9 and 12. Camera at 4 will cover spaces 2, 4, 5, and 6. Camera at 9 will cover 7, 9, and 11. Finally, camera at 12 will cover 12.
+M = 2 and A = [2, 4, 5, 6, 7, 9, 11, 12]
+The result is 3. The optimal coverage will be achieved if you install cameras at locations 4, 9 and 12. 
+Camera at 4 will cover spaces 2, 4, 5, and 6. Camera at 9 will cover 7, 9, and 11. Finally, camera at 12 
+will cover 12.
 
 
 Example 3:
@@ -41,10 +43,52 @@ While this might seem like no one would care about runtime complexity for 100 sp
 public class ParkingSpaces{
 	
 
+
     /*
     * solution - a
     */
-	public static int solution(int M, int[] A) {
+
+    public static int solution(int M, int[] A) {
+
+        int N = A.length;
+        int cover = -1;
+
+        int result = 0;
+
+        for (int i = 0; i < A.length; i++) {
+
+            if (A[i] > cover) {
+
+                int j = i + 1;
+
+                while (j < N) {
+
+                    if (A[i] + M < A[j]) {
+                        break;
+                    }
+
+                    j++;
+                }
+
+                j--;
+
+                cover = A[j];
+                
+                // update the cover for the range 
+                cover += M;
+
+                result++;
+            }
+        }
+
+
+        return result;
+    }
+
+    /*
+    * solution - a
+    */
+	public static int solution1(int M, int[] A) {
 
         int cover = -1;
         int N = A.length;
@@ -53,7 +97,7 @@ public class ParkingSpaces{
 
         int count = 0;
 
-        // A = [2, 4, 5, 6, 7, 9, 11, 12]
+        // A = [2, 4, 5, 6, 7, 9, 11, 12] and M = 2
         for (int i = 0; i < N; i++) {
 
             if (A[i] > cover) {
@@ -81,42 +125,7 @@ public class ParkingSpaces{
     }
 
 
-    /*
-    * solution - b
-    */
-
-    public static int solution1(int M, int[] A) {
-
-
-        int N = A.length;
-
-        int cover = -1;
-        int count= 0;
-
-        for (int i = 0; i < N; i++) {
-
-            if (A[i] > cover) {
-
-                int j = i + 1;
-
-                while (j < N) {
-
-                    if (A[i] + M < A[j]) {
-                        break;
-                    }
-
-                    j++;
-                }
-
-                j--;
-
-                cover = A[j] + M;
-                count++;
-            }
-        }
-
-        return count;
-    }
+    
 
 
 

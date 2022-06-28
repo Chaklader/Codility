@@ -1,5 +1,7 @@
+package com.codility.Interview;
 
 
+public class Practice {
 
     /*
      * find prime numbers within 1 to N that are mirror to each other
@@ -101,3 +103,5 @@
 
         return result;
     }
+
+}    

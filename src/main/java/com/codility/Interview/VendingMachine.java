@@ -13,13 +13,13 @@ package com.codility.Interview;
 * representing the number of each denomination to return.
 
 
-Example:
-getChange(5, 0.99) // should return [1,0,0,0,0,4]
+    Example:
+    getChange(5, 0.99) // should return [1,0,0,0,0,4]
 
 
-System.out.println(Arrays.toString(solution(5.0, 0.99)));
-System.out.println(Arrays.toString(solution(3.14, 1.99)));
-System.out.println(Arrays.toString(solution(4.0, 3.14)));
+    System.out.println(Arrays.toString(solution(5.0, 0.99)));
+    System.out.println(Arrays.toString(solution(3.14, 1.99)));
+    System.out.println(Arrays.toString(solution(4.0, 3.14)));
 
 * */
 
@@ -58,6 +58,33 @@ public class GetChange {
             // rest = Math.ceil(rest);
 
             index--;
+        }
+
+        return result;
+    }
+
+
+    /*
+    * solution - b
+    */ 
+
+    public static int[] solution1(double M, double P) {
+
+        int[] A = {1, 5, 10, 25, 50, 100};
+        int[] result = new int[6];
+
+        int N = A.length;
+
+        // 401
+        double change = (M - P) * 100;
+
+
+        for (int i = N - 1; i >= 0; i--) {
+
+            int v = (int)change / A[i];
+            result[i] = v;
+
+            change -= v * A[i];
         }
 
         return result;

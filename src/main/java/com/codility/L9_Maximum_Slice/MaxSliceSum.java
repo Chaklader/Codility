@@ -49,6 +49,7 @@ public class MaxSliceSum {
         int max = A[0];
         int result = A[0];
 
+        // int[] C = {1,2,-5,4}
         for (int i = 1; i < N; i++) {
 
             max = Math.max(A[i], max + A[i]);
@@ -176,22 +177,4 @@ public class MaxSliceSum {
         return result;
     }
 
-
-    /*
-     * solution - d
-     * */
-    public static int solution3(int[] A) {
-
-
-        int end = A[0];
-        int start = A[0];
-
-        for (int i = 1; i < A.length; i++) {
-
-            end = Math.max(A[i], end + A[i]);
-            start = Math.max(start, end);
-        }
-
-        return start;
-    }
 }

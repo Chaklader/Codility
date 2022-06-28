@@ -41,7 +41,7 @@ one offers cake. If the calculated result is greater than 1,000,000,000 the func
 
 return −1. Note that the rest stops can be given in any order and there could be many rest stops
 
-of the same kind at the same kilometer. For example, given N = 2, A = [29, 50], B = [61, 37],
+of the same kind at the same kilometer. For example, given N = 2, A = [29, 50], B = [37, 61],
 
 C = [37, 70], the function should return 3, since there are three ways to stop: (29, 37, 70),
 
@@ -92,6 +92,8 @@ public class RestStops {
         Arrays.sort(C);
 
 
+        // A = [29, 50], B = [37, 61], C = [37, 70]
+
         for (int i = 0; i < N; i++) {
 
             int maxIndex = maximumIndex(A, B[i]);
@@ -121,7 +123,7 @@ public class RestStops {
      * in binary search, the condition breaks at low > high and after the break, low = middle = high +1
      * */
     /*
-     * maximum index of an item in the sorted array A which is less than key
+     * maximum index of an item in the sorted array A which is less than x
      * */
     public static int maximumIndex(int[] A, int x) {
 
@@ -139,7 +141,6 @@ public class RestStops {
         int low = 0;
         int high = N - 1;
 
-        int result = -1;
 
         while (low <= high) {
 
@@ -163,7 +164,7 @@ public class RestStops {
 
 
     /*
-     * min index of an item in the sorted array C which is just greater than key
+     * min index of an item in the sorted array C which is just greater than x
      * */
     public static int minimumIndex(int[] C, int x) {
 
@@ -181,7 +182,7 @@ public class RestStops {
         int low = 0;
         int high = N - 1;
 
-
+        
         while (low <= high) {
 
             int middle = (high + low) / 2;

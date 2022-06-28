@@ -15,17 +15,17 @@ more precisely: A[i] = A[i−1] * 2 or A = A[i−1] + 1, for i ≥ 1.
 
 For example, for N = 17, the shortest sequence is:
 
-  A[0] = 1
+    A[0] = 1
 
-  A[1] = 2
+    A[1] = 2
 
-  A[2] = 4
+    A[2] = 4
 
-  A[3] = 8
+    A[3] = 8
 
-  A[4] = 16
+    A[4] = 16
 
-  A[5] = 17
+    A[5] = 17
 
 
 Write a function:
@@ -68,6 +68,21 @@ public class ShortestSequence {
      * */
     public static int solution(int N) {
 
+        int count = 0;
+
+        while (N > 0) {
+            count++;
+            N = (N % 2 == 0) ? (N / 2) : (N - 1);
+        }
+
+        return count;
+    }
+
+    /*
+     * solution - b
+     * */
+    public static int solution1(int N) {
+
         List<Integer> list = new ArrayList<>();
         list.add(N);
 
@@ -91,22 +106,6 @@ public class ShortestSequence {
         }
 
         return list.size();
-    }
-
-
-    /*
-     * solution - b
-     * */
-    public static int solution1(int N) {
-
-        int count = 0;
-
-        while (N > 0) {
-            count++;
-            N = (N % 2 == 0) ? (N / 2) : (N - 1);
-        }
-
-        return count;
     }
 
 

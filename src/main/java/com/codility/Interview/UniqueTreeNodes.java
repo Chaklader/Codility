@@ -208,6 +208,13 @@ public class UniqueTreeNodes {
 
     /*
      * find all the paths of a binary search tree
+     *             4
+                  /  \
+                 5    6
+                /    / \
+               4    1   6
+              /
+             5
      * */
     private static void findPaths(Node node, List<List<Integer>> lists, Stack<Node> stack) {
 
@@ -385,7 +392,6 @@ public class UniqueTreeNodes {
 
 
     public static void findPaths2(Node root, List<List<Node>> paths) {
-
 
         if (root == null) {
             return;

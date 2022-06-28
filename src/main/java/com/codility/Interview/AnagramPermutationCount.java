@@ -22,6 +22,29 @@ public class AnagramPermutationCount {
         return result;
     }
 
+    public static Map<String, Long> getWordFrequency(List<String> words) {
+
+        Map<String, Long> map = new HashMap<>();
+
+        for (String word : words) {
+
+            String sortedWord = getSortWord(word);
+            long frequency = map.containsKey(sortedWord) ? map.get(sortedWord) + 1 : 1;
+
+            map.put(sortedWord, frequency);
+        }
+
+        return map;
+    }
+
+
+    public static String getSortWord(String str) {
+
+        char[] ch = str.toCharArray();
+        Arrays.sort(ch);
+
+        return String.valueOf(ch);
+    }
 
     public static long getPermutationCount(String sentence, Map<String, Long> map) {
 
@@ -40,28 +63,8 @@ public class AnagramPermutationCount {
         return result;
     }
 
-    public static Map<String, Long> getWordFrequency(List<String> words) {
+    
 
-        Map<String, Long> map = new HashMap<>();
-
-        for (String word : words) {
-
-            String sortedWord = getSortWord(word);
-            long frequency = map.containsKey(sortedWord) ? map.get(sortedWord) + 1 : 1;
-
-            map.put(sortedWord, frequency);
-        }
-
-        return map;
-    }
-
-    public static String getSortWord(String str) {
-
-        char[] ch = str.toCharArray();
-        Arrays.sort(ch);
-
-        return String.valueOf(ch);
-    }
 
 
 

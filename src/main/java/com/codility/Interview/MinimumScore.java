@@ -6,8 +6,8 @@ You are playing A game with N cards. On each side of each card A positive intege
 written.
 The score of the game is smallest positive integer that doesn't appear on the cards'
 front faces.
-You may decide which card you want to flip over. Having flipped them, you then read
 
+You may decide which card you want to flip over. Having flipped them, you then read
 the numbers on the front faces of all the cards. What is the minimum game score you can 
 achieve?
 
@@ -20,8 +20,8 @@ Write A function:
     }
 
 
-that, given two arrays of integers A and B, both of length N, describing the numbers w
-ritten on
+that, given two arrays of integers A and B, both of length N, describing the numbers 
+written on
 the fronts and backs of all the cards, returns the minimum possible game score. For ex
 ample,
  given A = [1, 2, 4, 3] and B = [1, 3, 2, 3], your function should return 2, as we cou
@@ -93,7 +93,7 @@ public class MinimumScore {
              * as we already run to find the min value. So, even
              * B[i] < A[i], its still B[i] > smallestPositive.
              * */
-            if (A[i] == B[i] || B[i] < A[i]) {
+            if (A[i] == B[i] || A[i] > B[i]) {
                 continue;
             }
 
@@ -113,33 +113,56 @@ public class MinimumScore {
     /*
      * find the smallest positive missing number
      * */
+    // public static int getSmallestPositive(int[] A) {
+
+    //     int N = A.length;
+
+    //     /*
+    //      * in case, we have positive numbers in the sequential order, the
+    //      * smallest positive number will be N requires to put in the (N+1)
+    //      * index
+    //      * */
+    //     boolean[] counter = new boolean[N + 1];
+    //     int M = counter.length;
+
+    //     for (int a : A) {
+
+    //         if (a > 0 && a < M) {
+    //             counter[a - 1] = true;
+    //         }
+    //     }
+
+    //     for (int j = 0; j < M; j++) {
+
+    //         if (!counter[j]) {
+    //             return j + 1;
+    //         }
+    //     }
+
+    //     return A.length + 1;
+    // }
+
     public static int getSmallestPositive(int[] A) {
 
         int N = A.length;
 
-        /*
-         * in case, we have positive numbers in the sequential order, the
-         * smallest positive number will be N requires to put in the (N+1)
-         * index
-         * */
-        boolean[] counter = new boolean[N + 1];
-        int M = counter.length;
+        boolean[] C = new boolean[N];
 
         for (int a : A) {
 
-            if (a > 0 && a < M) {
-                counter[a - 1] = true;
+            if (a > 0 && a <= N) {
+                C[a - 1] = true;
             }
         }
 
-        for (int j = 0; j < M; j++) {
+        for (int j = 0; j < N; j++) {
 
-            if (!counter[j]) {
+            if (!C[j]) {
                 return j + 1;
             }
         }
 
-        return A.length + 1;
+        return N + 1;
     }
 
 

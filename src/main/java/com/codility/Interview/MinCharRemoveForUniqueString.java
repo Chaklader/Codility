@@ -34,7 +34,6 @@ public class MinCharRemove {
             priorityQueue.remove();
 
             if (priorityQueue.isEmpty()) {
-
                 return cntChar;
             }
 

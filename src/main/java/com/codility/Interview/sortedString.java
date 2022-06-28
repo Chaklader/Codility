@@ -1,6 +1,6 @@
 
 
-public class sortedString extends Parent implements Interface {
+public class sortedString {
 
     
     /*
