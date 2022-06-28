@@ -100,11 +100,11 @@ public class Peaks {
      * */
     public static int solution(int[] A) {
 
-        int N = A.length;
+        int M = A.length;
 
         List<Integer> peaks = new ArrayList<>();
 
-        for (int i = 1; i < (N - 1); i++) {
+        for (int i = 1; i < (M - 1); i++) {
 
             if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
                 peaks.add(i);
