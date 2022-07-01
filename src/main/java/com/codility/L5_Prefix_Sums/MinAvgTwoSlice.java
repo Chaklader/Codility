@@ -130,6 +130,10 @@ public class MinAvgTwoSlice {
                 result = tail;
                 min = temp;
             }
+
+            // if (head == A.length) {
+            //     return result;
+            // }
         }
 
     }

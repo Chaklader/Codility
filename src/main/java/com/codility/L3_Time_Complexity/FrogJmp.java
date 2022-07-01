@@ -44,6 +44,23 @@ public class FrogJmp {
 
 
     /*
+     * solution - c
+     * */
+    public int solution2(int X, int Y, int D) {
+
+
+        int diff = (Y - X);
+
+        int result = diff / D;
+
+        if (diff % D == 0) {
+            return result;
+        } 
+
+        return result +1;
+    }
+    
+    /*
      * solution - a
      * */
     public static int solution(int X, int Y, int D) {
@@ -65,25 +82,6 @@ public class FrogJmp {
 
         return result;
     }
-
-
-    /*
-     * solution - c
-     * */
-    public int solution2(int X, int Y, int D) {
-
-
-        int diff = (Y - X);
-
-        int result = diff / D;
-
-        if (diff % D == 0) {
-            return result;
-        } 
-
-        return result +1;
-    }
-
 
     /*
      * solution - d

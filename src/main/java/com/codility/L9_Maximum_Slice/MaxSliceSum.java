@@ -42,7 +42,7 @@ public class MaxSliceSum {
     /*
      * solution - a
      */
-    public static int solution1(int[] A) {
+    public static int solution(int[] A) {
 
         int N = A.length;
 

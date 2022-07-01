@@ -53,7 +53,7 @@ public class CountDiv {
         int result = (B - A) / K;
 
         if (A % K == 0 || B % K == 0) {
-            return result +1;
+            return result++;
         }
 
         return result;

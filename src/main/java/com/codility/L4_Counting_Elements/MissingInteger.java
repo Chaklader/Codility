@@ -36,43 +36,11 @@ import java.util.stream.IntStream;
 public class MissingInteger {
 
 
+
     /*
      * solution - a
      * */
     public static int solution(int[] A) {
-
-        int N = A.length;
-
-        if (N == 0) {
-            return 1;
-        }
-
-
-        List<Integer> list = IntStream.of(A).boxed()
-                .filter(x -> x > 0).sorted().distinct()
-                .collect(Collectors.toCollection(ArrayList<Integer>::new));
-
-        int M = list.size();
-
-
-        for (int i = 0; i < M; i++) {
-
-            if (list.get(i) != i + 1) {
-                return i + 1;
-            }
-        }
-
-        /*
-         * all the numbers are in sequence
-         * */
-        return M + 1;
-    }
-
-
-    /*
-     * solution - b
-     * */
-    public static int solution1(int[] A) {
 
         int N = A.length;        
         boolean[] counter = new boolean[N + 1];
@@ -98,6 +66,34 @@ public class MissingInteger {
 
         return N + 1;
     }
+
+
+    /*
+     * solution - d
+     * */
+    // 100% accuracy for the Codility 
+    public int solution3(int[] A) {
+
+        int[] C = new int[A.length];
+        int N = A.length;
+
+        for (int i = 0; i < A.length; i++) {
+
+            if (A[i] > 0 && A[i] <= N) {
+                C[A[i] - 1] = A[i];
+            }            
+        }
+
+        for (int i = 0; i < C.length; i++) {
+
+            if (C[i] == 0) {
+                return i + 1;
+            }
+        }
+
+        return A.length + 1;
+    }
+
 
 
     /*
@@ -145,33 +141,37 @@ public class MissingInteger {
 
         return (N + 1);
     }
-
-
-
+ 
     /*
-     * solution - d
+     * solution - b
      * */
-    // 100% accuracy for the Codility 
-    public int solution3(int[] A) {
+    public static int solution1(int[] A) {
 
-        int[] C = new int[A.length];
         int N = A.length;
 
-        for (int i = 0; i < A.length; i++) {
-
-            if (A[i] > 0 && A[i] <= N) {
-                C[A[i] - 1] = A[i];
-            }            
+        if (N == 0) {
+            return 1;
         }
 
-        for (int i = 0; i < C.length; i++) {
 
-            if (C[i] == 0) {
+        List<Integer> list = IntStream.of(A).boxed()
+                .filter(x -> x > 0).sorted().distinct()
+                .collect(Collectors.toCollection(ArrayList<Integer>::new));
+
+        int M = list.size();
+
+
+        for (int i = 0; i < M; i++) {
+
+            if (list.get(i) != i + 1) {
                 return i + 1;
             }
         }
 
-        return A.length + 1;
+        /*
+         * all the numbers are in sequence
+         * */
+        return M + 1;
     }
 
 

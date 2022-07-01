@@ -115,11 +115,11 @@ public class Peaks {
 
         for (int i = N; i >= 1; i--) {
 
-            if (N % i != 0) {
+            if (M % i != 0) {
                 continue;
             }
 
-            int size = N / i;
+            int size = M / i;
             int count = 0;
 
             for (int p : peaks) {
