@@ -52,6 +52,32 @@ import java.util.Map;
 public class CyclicRotation {
 
 
+
+    /*
+     * solution - b
+     * */
+    public static int[] solution1(int[] A, int K) {
+
+        final int N = A.length;
+        int[] result = new int[N];
+
+        if(K == N){
+            return A;
+        }
+
+        if(Arrays.stream(A).distinct().count() == 1){
+            return A;
+        }
+
+        for (int i = 0; i < N; i++) {
+
+            int index = (i + K) % N;
+            result[index] = A[i];
+        }
+
+        return result;
+    }
+    
     /*
      * solution - a
      * */
@@ -117,32 +143,6 @@ public class CyclicRotation {
 
     public static int swap(int itself, int dummy) {
         return itself;
-    }
-
-    /*
-     * solution - b
-     * */
-    public static int[] solution1(int[] A, int K) {
-
-
-        final int N = A.length;
-        int[] result = new int[N];
-
-        if(K == N){
-            return A;
-        }
-
-        if(Arrays.stream(A).distinct().count() == 1){
-            return A;
-        }
-
-        for (int i = 0; i < N; i++) {
-
-            int index = (i + K) % N;
-            result[index] = A[i];
-        }
-
-        return result;
     }
 
     /*

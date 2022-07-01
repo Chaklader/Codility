@@ -48,7 +48,6 @@ public class FrogJmp {
      * */
     public int solution2(int X, int Y, int D) {
 
-
         int diff = (Y - X);
 
         int result = diff / D;
@@ -59,7 +58,7 @@ public class FrogJmp {
 
         return result +1;
     }
-    
+
     /*
      * solution - a
      * */

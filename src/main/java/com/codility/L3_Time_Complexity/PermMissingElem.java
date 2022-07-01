@@ -47,6 +47,30 @@ public class PermMissingElem {
 
 
     /*
+     * solution - e
+     */
+    public int solution5(int[] A) {
+
+        int N = A.length;
+
+        int[] C = new int[N + 2];
+        C[0] = -1;
+
+        for (int i = 0; i < N; i++) {
+            C[A[i]] = -1;
+        }
+
+        for (int i = 1; i < (N + 2); i++) {
+
+            if (C[i] == 0) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /*
      * solution - a
      */
     public static int solution(int[] A) {
@@ -106,33 +130,6 @@ public class PermMissingElem {
 
         return sum;
     }
-
-
-    /*
-     * solution - e
-     */
-    public int solution5(int[] A) {
-
-
-        int N = A.length;
-
-        int[] C = new int[N + 2];
-        C[0] = -1;
-
-        for (int i = 0; i < N; i++) {
-            C[A[i]] = -1;
-        }
-
-        for (int i = 1; i < (N + 2); i++) {
-
-            if (C[i] == 0) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
 
     public static void main(String[] args) {
 
