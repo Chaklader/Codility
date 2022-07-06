@@ -55,24 +55,6 @@ public class OddOccurrencesInArray {
 
 
     /*
-     * solution - a
-     * */
-    // 100 %
-    // This code doesn't work if there is no unique value in the array 
-    public int solution(int[] arr) {
-
-        int result = arr[0];
-
-        for (int i = 1; i < arr.length; i++) {
-            result ^= arr[i];
-        }
-
-        return result;
-    }
-
-
-
-    /*
      * solution - b
      * */
     /*
@@ -111,7 +93,6 @@ public class OddOccurrencesInArray {
 
         Map<Integer, Integer> map = new LinkedHashMap<>();
 
-
         for (int i = 0; i < N; i++) {
 
             if (!map.containsKey(A[i])) {
@@ -123,16 +104,33 @@ public class OddOccurrencesInArray {
             }
         }
 
-        if (map.size() == 1) {
-
-            int value = (new ArrayList<Integer>(map.keySet())).get(0);
-            return value;
+        if (map.size() != 1) {
+            return -1;
         }
 
         // map.keySet().iterator().next()  
         // return map.size() == 1 ? map.entrySet().iterator().next().getKey() : -1;
 
-        return -1;
+        List<Integer> list = new ArrayList<Integer>(map.keySet());
+        
+        int value = list.get(0);
+        return value;
+    }
+
+    /*
+     * solution - a
+     * */
+    // 100 %
+    // This code doesn't work if there is no unique value in the array 
+    public int solution(int[] arr) {
+
+        int result = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            result ^= arr[i];
+        }
+
+        return result;
     }
 
 
